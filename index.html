@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Birthday Surprise 🎉</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
 <style>
 body {
     margin: 0;
@@ -18,7 +16,6 @@ body {
     background: linear-gradient(135deg, #ff9aa2, #ffd1dc);
     overflow: hidden;
 }
-
 /* ================= FLOATING HEARTS + STARS ================= */
 .floating {
     position: fixed;
@@ -27,7 +24,6 @@ body {
     animation: floatUp linear forwards;
     pointer-events: none;
 }
-
 @keyframes floatUp {
     from {
         transform: translateY(0) scale(0.8);
@@ -39,14 +35,12 @@ body {
         opacity: 0;
     }
 }
-
 /* ================= SPARKLE BURST ================= */
 .sparkle {
     position: fixed;
     pointer-events: none;
     animation: sparkleMove 1s ease-out forwards;
 }
-
 @keyframes sparkleMove {
     from {
         transform: translate(0,0) scale(1);
@@ -57,7 +51,6 @@ body {
         opacity: 0;
     }
 }
-
 /* ================= CARD ================= */
 .card {
     position: relative;
@@ -69,7 +62,6 @@ body {
     text-align: center;
     box-shadow: 0 20px 45px rgba(0,0,0,0.28);
 }
-
 /* ================= ENVELOPE ================= */
 .envelope-container {
     position: relative;
@@ -78,7 +70,6 @@ body {
     margin: auto;
     cursor: pointer;
 }
-
 .envelope-glow::before {
     content: "";
     position: absolute;
@@ -93,14 +84,12 @@ body {
     50% { opacity: 0.85; transform: scale(1.05); }
     100% { opacity: 0.35; transform: scale(0.96); }
 }
-
 .envelope-body {
     width: 100%;
     height: 100%;
     background: linear-gradient(145deg, #ffd1e3, #ffb6d0);
     border-radius: 20px;
 }
-
 .envelope-flap {
     position: absolute;
     inset: 0;
@@ -112,7 +101,6 @@ body {
 .envelope-open .envelope-flap {
     transform: rotateX(180deg);
 }
-
 .envelope-icon {
     position: absolute;
     top: 32px;
@@ -120,14 +108,12 @@ body {
     font-size: 2.9rem;
     text-align: center;
 }
-
 /* ================= CONTENT ================= */
 #wishSection,
 #quotesSection,
 #footerMessage {
     display: none;
 }
-
 /* Wish */
 #wishSection h1 {
     color: #ff3366;
@@ -141,7 +127,6 @@ body {
     font-size: 1.05rem;
     color: #555;
 }
-
 /* Quotes */
 .quote-btn {
     padding: 10px 20px;
@@ -160,7 +145,6 @@ body {
     border-radius: 16px;
     font-size: 1rem;
 }
-
 /* Footer */
 .footer {
     margin-top: 24px;
@@ -177,7 +161,6 @@ body {
     cursor: pointer;
     font-size: 0.95rem;
 }
-
 /* ================= FINAL WISH MODAL ================= */
 .modal-overlay {
     position: fixed;
@@ -189,7 +172,6 @@ body {
     justify-content: center;
     z-index: 20;
 }
-
 .modal {
     background: #fff0f6;
     padding: 26px 28px;
@@ -197,7 +179,6 @@ body {
     max-width: 400px;
     text-align: center;
 }
-
 .modal h2 {
     color: #ff3366;
     font-size: 1.6rem;
@@ -218,11 +199,8 @@ body {
 }
 </style>
 </head>
-
 <body>
-
 <div class="card">
-
     <!-- Envelope -->
     <div class="envelope-container envelope-glow" id="envelope" onclick="openEnvelope(event)">
         <div class="envelope-body">
@@ -230,14 +208,12 @@ body {
             <div class="envelope-icon">✉️</div>
         </div>
     </div>
-
     <!-- Wish -->
     <div id="wishSection">
         <h1>🎉 Happy Birthday 🎂</h1>
         <h2> Divya 💖💝 </h2>
         <p>May your day be filled with love, laughter, and endless happiness 💖</p>
     </div>
-
     <!-- Quotes -->
     <div id="quotesSection">
         <button class="quote-btn" onclick="showQuote('“You’re not just special today — you’re special every single day. 🤍✨”')">Quote 1</button>
@@ -247,14 +223,12 @@ body {
         <button class="quote-btn" onclick="showQuote('“Thank you for being the kind of friend who stays, cares, and understands. You mean so much. 💖🤗”')">Quote 5</button>
         <div id="quoteBox"></div>
     </div>
-
     <!-- Footer -->
     <div class="footer" id="footerMessage">
         Made with love, care and affection ✨<br>
         <button class="final-btn" onclick="openFinalWish()">Final Wish 💝</button>
     </div>
 </div>
-
 <!-- FINAL WISH POPUP -->
 <div class="modal-overlay" id="finalWishModal">
     <div class="modal">
@@ -264,19 +238,17 @@ body {
             May your life always be filled with warmth, kindness, and moments that make your heart smile.
             You deserve all the happiness in the world, today and always. 
             Nenu happy ga undadaniki nuvvu kuda oka main reason. Naku nuvvu chesina chinna chinna help eh chala precious.
-            Thank you for being a part of my life. Neekunna badhalu anni thaggipoyi happiness matrame undalani korukuntunnanu.
+            Thank you for being a part of my life. Nee life antha only happiness undalani korukuntunnanu.
             But one thing thanks for being the best friend to me forever.
             Nuvvu chese prathi pani ki oka well wisher laga eppudu supportive ga untanu.
-            Andari gurinchi telidu but naku nee meeda ekkuva care, love and affection undi.🤍💖.
+            Not aware of others but I have more care, love and affection on you.🤍💖.
         </p>
         <button class="close-btn" onclick="closeFinalWish()">Close ✨</button>
     </div>
 </div>
-
 <script>
 /* ================= FLOATING BACKGROUND ================= */
 const symbols = ["❤️","💖","💕","💘","💝","⭐","✨","🌟"];
-
 function createFloatingSymbol() {
     const el = document.createElement("div");
     el.className = "floating";
@@ -288,10 +260,8 @@ function createFloatingSymbol() {
     setTimeout(() => el.remove(), 13000);
 }
 setInterval(createFloatingSymbol, 400);
-
 /* ================= SPARKLE BURST ================= */
 const sparkles = ["✨","⭐","🌟","💫"];
-
 function sparkleBurst(x, y) {
     for (let i = 0; i < 18; i++) {
         const s = document.createElement("div");
@@ -306,17 +276,13 @@ function sparkleBurst(x, y) {
         setTimeout(() => s.remove(), 1000);
     }
 }
-
 /* ================= LOGIC ================= */
 function openEnvelope(e) {
     const env = document.getElementById("envelope");
-
     const rect = env.getBoundingClientRect();
     sparkleBurst(rect.left + rect.width / 2, rect.top + rect.height / 2);
-
     env.classList.remove("envelope-glow");
     env.classList.add("envelope-open");
-
     setTimeout(() => {
         env.style.display = "none";
         wishSection.style.display = "block";
@@ -324,19 +290,15 @@ function openEnvelope(e) {
         footerMessage.style.display = "block";
     }, 700);
 }
-
 function showQuote(text) {
     quoteBox.innerHTML = text;
 }
-
 function openFinalWish() {
     document.getElementById("finalWishModal").style.display = "flex";
 }
-
 function closeFinalWish() {
     document.getElementById("finalWishModal").style.display = "none";
 }
 </script>
-
 </body>
 </html>
